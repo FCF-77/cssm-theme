@@ -1,0 +1,37 @@
+.block--content {
+  color: $color-grey-text;
+  line-height: 1.25;
+  font-size: rem-calc(18px);
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(20px);
+  }
+
+  p {
+    margin-bottom: 1.5em;
+    color: $color-grey-text;
+    line-height: 1.25;
+    font-weight: 400;
+  }
+
+  // clean importants
+  h1, h2, h3, h4, h5, h6 {
+    color: $color-brand-primary;
+    margin-bottom: 10px;
+    font-weight: 400 !important;
+
+    strong {
+      font-weight: 400;
+    }
+  }
+}
+
+.element-cover {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  overflow: hidden;
+}

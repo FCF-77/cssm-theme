@@ -1,0 +1,146 @@
+.single, .template-ergogymno, .template-ecografe, .template-ucc, .template-clinicacoracao, .template-cliniform, .template-unidadepediatria {
+  article header {
+    position: relative;
+    height: 350px;
+    background-color: $color-brand-primary;
+
+    @include breakpoint(medium) {
+      height: 400px;
+    }
+
+    .single--header__wrapper {
+      @include xy-grid-container();
+      display: flex;
+      align-items: center;
+      height: inherit;
+    }
+
+    .single--title {
+      position: relative;
+      z-index: $above-content;
+      color: white;
+
+      h1 {
+        font-size: 30px;
+
+        @include breakpoint(medium) {
+          font-size: 56px;
+        }
+      }
+
+    }
+
+    .breadcrumbs {
+      margin-top: 15px;
+    }
+  }
+
+  .single--card {
+    position: relative;
+    z-index: $above-content;
+    background-color: white;
+    padding: 50px 20px;
+    margin-bottom: 100px;
+    margin-top: -50px;
+
+    @include breakpoint(large) {
+      margin-top: -80px;
+      padding: 50px;
+
+      // &:after 
+      //   content: '';
+      //   position: absolute;
+      //   z-index: -5;
+      //   width: 50vw;
+      //   height: 100%;
+      //   right: -50%;
+      //   top:0;
+      //   background-color: white;
+      // 
+    }
+
+    h1{
+      font-size: 26px;
+      color:#03c7e7;
+      margin-top: -15px;
+
+      @include breakpoint(medium) {
+        font-size: 48px;
+      }
+    }
+
+    h2 {
+      color: $color-brand-primary;
+    }
+
+    h3 {
+      color: $color-grey-medium;
+      font-weight: $font-light;
+      font-size: 14px;
+    }
+
+    .single--card__content {
+      color: $color-brand-primary;
+      line-height: 1.25;
+      font-size: 18px;
+
+      p {
+        margin-bottom: 15px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $color-brand-secondary;
+        font-weight: 400;
+        margin-bottom: 20px;
+
+        &:not(:first-of-type) {
+          margin-top: 40px;
+        }
+      }
+
+      .list_circle_content {
+        list-style: circle;
+        margin-left: 20px;
+        margin-bottom: 15px;
+      }
+
+      .mais_info{
+        background-color:#015580;
+        color:#fff;
+        text-align:center;
+        padding:20px;
+        font-size:18px;
+
+        @include breakpoint(medium) {
+          font-size:22px;
+        }
+      }
+    }
+
+    .single--card__cv{
+      h2 {
+        &:nth-child(n+2){
+          margin-top: 40px;
+        }
+      }
+    }
+
+    .single--card__appointment {
+      margin-bottom: 40px;
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        font-size: 15px;
+        margin-bottom: 30px;
+      }
+    }
+
+  }
+}

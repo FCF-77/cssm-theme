@@ -1,0 +1,53 @@
+// Colors
+
+$color-brand-primary                  : #015580;
+//$color-brand-secondary                : #00c7e8;
+$color-brand-secondary                : #36AAC3;
+$color-hover-accordion                : #EAF6F9;
+
+$color-grey-light                     : #DBE1E9;
+$color-grey-medium                    : #B4C5DB;
+$color-background                     : #f3f6fa;
+$color-grey-text                      : #828994;
+$blue-gradient                        : linear-gradient(-180deg, #015282 0%, #003656 100%);
+
+$color-ucc-primary                    : #007754;
+$color-hover-ucc                      : #eff9f1;
+$color-clinicacoracao-primary         : #D63240;
+$color-hover-clinicacoracao           : #FBEFF0;
+
+
+
+// Fonts
+$font-sans                            : "futura-pt",sans-serif;
+
+// -- weights
+$font-light                           : 400;
+$font-medium                          : 500;
+$font-bold                            : 700;
+
+
+// Sizes
+
+$desktop-header-height                : 75px;
+$desktop-nav-height                   : 50px;
+
+// Variables
+$border-radius                        : 5px;
+$button-border-radius                 : 40px;
+
+// Animation
+$cubic                                : cubic-bezier(.75,.02,.71,.97);
+
+
+// Z-index
+$z-index-1                            : 100;
+$z-index-2                            : 200;
+$z-index-3                            : 300;
+$z-index-4                            : 400;
+$z-index-5                            : 500;
+
+$below-content: 25;
+$content: 50;
+$above-content: 100;
+$absolute-index: 999;

@@ -1,0 +1,35 @@
+.partner--info {
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  ul {
+    margin-bottom: 25px;
+
+    li {
+      padding: 3px 0;
+      color: $color-grey-text;
+    }
+  }
+
+  p {
+    color: $color-grey-text;
+    margin-bottom: 15px;
+  }
+
+  .partner--info__directions {
+    background-image: url('../images/direction.svg');
+    background-repeat: no-repeat;
+    background-position: center left 24px;
+    padding-left: 54px;
+    background-size: 20px;
+  }
+
+  .schedule--refeicoes{
+    border-bottom: 1px solid $color-brand-secondary;
+    line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+

@@ -1,0 +1,42 @@
+.page-title {
+  text-align: center;
+  margin-bottom: 100px;
+
+  &.default-page {
+    h1 {
+      font-size: rem-calc(30);
+      font-weight: $font-light;
+      text-transform: none;
+      letter-spacing: 0;
+      margin: 0;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(60);
+      }
+    }
+  }
+
+  h1 {
+    color: $color-brand-secondary;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    color: $color-brand-primary;
+    font-size: 35px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto 15px;
+    color: $color-grey-text;
+
+  }
+}

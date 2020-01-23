@@ -1,0 +1,135 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: $font-medium;
+  color: white;
+  border: none;
+  border-radius: $button-border-radius;
+  vertical-align: text-bottom;
+  white-space: nowrap;
+  transition: all .5s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px 0 rgba(180,197,219,0.38);
+  }
+
+  &.btn-dark-shadow {
+    &:hover {
+      box-shadow: 0 5px 10px 0 darken($color-brand-primary, 10);
+    }
+  }
+
+  &.btn-blue {
+    background-color: $color-brand-secondary;
+
+    &:hover {
+      background-color: lighten($color-brand-secondary, 10);
+    }
+  }
+
+/*   &.btn-green {
+    background-color: $color-ucc-primary;
+
+    &:hover {
+      background-color: lighten($color-ucc-primary, 10);
+    }
+  } */
+
+  &.btn-blue-dark {
+    background-color: $color-brand-primary;
+
+    &:hover {
+      background-color: lighten($color-brand-primary, 10);
+    }
+  }
+
+  &.btn-icon {
+    background-repeat: no-repeat;
+    background-position: center left 24px;
+    padding-left: 54px;
+    background-size: 20px;
+
+    &.btn-message {
+      background-image: url('../images/icon_message.svg');
+    }
+
+    &.btn-message-white {
+      background-image: url('../images/icon_message_white.svg');
+    }
+
+    &.btn-search {
+      background-image: url('../images/icon_search.svg');
+    }
+
+    &.btn-appointment {
+      background-image: url('../images/icon_appointment.svg');
+    }
+
+    &.btn-atendimento {
+      background-image: url('../images/icon_atendimento.svg');
+    }
+
+    &.btn-home-white {
+      background-image: url('../images/icon_home_white.svg');
+    }
+  }
+}
+
+.btn {
+  + .btn-grey {
+    background-color: $color-grey-light ;
+    color: $color-brand-primary;
+    &:hover {
+      background-color: lighten($color-grey-light, 5);
+      transform: translateY(-2px);
+      box-shadow:none;
+    }
+    &::after, &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      border: 1px solid $color-grey-light ;
+      left: -8px;
+      right: -8px;
+      top: -8px;
+      bottom: -8px;
+      border-radius: 40px;
+      animation: animate 2s linear infinite;
+      opacity: 0;
+      backface-visibility: hidden;
+    }
+    &::after{
+      animation-delay: 1.4s;
+    }
+  }
+}
+@keyframes animate{
+  0%{
+    transform: scale(0.7);
+    opacity:0;
+  }
+  50%{
+    opacity:1;
+  }
+  100%{
+    transform: scale(1.2);
+    opacity:0;
+  }
+}
+
+
+.wp-block-file a.wp-block-file__button{
+  background-color: $color-brand-secondary;
+  font-size: 16px ;
+  transition: all .5s ease;
+
+  &:hover {
+    transform: translateY(-2px)!important;
+    box-shadow: 0 5px 10px 0 rgba(180,197,219,0.38)!important;
+    background-color: lighten($color-brand-secondary, 10) !important;
+  }
+}

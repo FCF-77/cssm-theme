@@ -1,0 +1,118 @@
+#mobilenav {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 131px;
+  z-index: 150;
+  background-color: $color-grey-light;
+  transform: translateX(100%) translateZ(0);
+  transition: transform .68s cubic-bezier(.64,.04,.35,1);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling:touch; // mobile safari
+
+  &.menu--visible {
+    transform: translateX(0) translateZ(0);
+  }
+
+  .mobilenav__menu {
+    overflow-y: scroll;
+  }
+
+  .nav {
+    background-color: white;
+    overflow-y: scroll;
+
+    &> .menu-item {
+      position: relative;
+      margin-right: 0;
+      line-height: 70px;
+      display: block;
+      background: white;
+      border-bottom: 1px solid $color-grey-light;
+
+
+
+      &.menu-item-has-children {
+        &::after {
+          content: '';
+          position: absolute;
+          width: 0px;
+          height: 0px;
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+          border-top: 8px solid $color-grey-light;
+          z-index: 10;
+          right: 30px;
+          top: 32px;
+          transition: 0.3s all cubic-bezier(.64,.04,.35,1);
+        }
+
+        &.open {
+          &>a {
+            color: $color-brand-secondary;
+          }
+          &::after {
+            //transform: scale(-1);
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      a {
+        transition: color 0.3s ease;
+        color: $color-brand-primary;
+        font-size: rem-calc(18);
+        font-weight: $font-bold;
+        padding-left: rem-calc(30);
+        display: block;
+      }
+
+      .sub-menu {
+        position: relative;
+        background: lighten($color-grey-light, 5);
+        left: auto;
+        right: auto;
+        top: auto;
+        transition: 0.3s height cubic-bezier(.64,.04,.35,1);
+        padding-left: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: 2;
+
+        .menu-item {
+          line-height: 60px;
+          height: 60px;
+
+          &.active {
+            a {
+              color: $color-brand-secondary;
+            }
+          }
+
+          a {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  .mobilenav__copyright {
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    bottom: 80px;
+    text-align: center;
+    font-weight: $font-bold;
+    color: $color-brand-primary;
+
+    a {
+      font-size: 18px;
+    }
+  }
+}

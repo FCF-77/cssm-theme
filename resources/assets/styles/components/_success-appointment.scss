@@ -1,0 +1,115 @@
+#successAppointment {
+    position: fixed;
+    z-index: $z-index-4;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: $blue-gradient;
+    transform: translateY(100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+
+    #successAppointment__logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        opacity: 0;
+    }
+
+    #successAppointment__content {
+        position: relative;
+        z-index: $z-index-5;
+        max-width: 700px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        #success-close {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: opacity 0.3s ease;
+            opacity: 0.5;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            span {
+                display: block;
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                margin-left: 3px;
+            }
+
+            .cross {
+                width: 32px;
+                height: 32px;
+                opacity: 0.3;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-top: 2px;
+
+                &:before, &:after {
+                    position: absolute;
+                    left: 50%;
+                    top: 0;
+                    content: '';
+                    height: 33px;
+                    width: 2px;
+                    background-color: white;
+                    transform: translateX(-50%);
+                }
+
+                &:before {
+                    transform: rotate(45deg);
+                }
+
+                &:after {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
+        h1 {
+            font-size: 30px;
+            max-width: 80%;
+            margin: 0 auto 40px;
+
+            @include breakpoint(medium) {
+                font-size: 50px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            max-width: 75%;
+            margin: 0 auto 20px;
+
+            @include breakpoint(medium) {
+                font-size: 25px;
+            }
+
+            &:last-of-type {
+                margin: 0 auto 60px;
+            }
+        }
+
+        a {
+            opacity: 0;
+            margin: 10px 20px;
+        }
+    }
+}

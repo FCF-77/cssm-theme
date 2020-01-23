@@ -1,0 +1,118 @@
+#map {
+	width: 100%;
+	height: 450px;
+}
+
+.container_contactos{
+    margin-bottom:65px;
+    position: relative;
+
+    .map_content{
+        z-index: 20;
+        height:100%;
+        text-align: center;
+        margin-top: -80px;
+    }
+
+    h2 {
+        color: $color-brand-secondary;
+        font-size: rem-calc(26px);
+        font-weight: $font-medium;
+        margin-bottom: 30px;
+        @include breakpoint(medium) {
+            font-size: rem-calc(30px);
+          }
+    }
+
+    h3{
+        font-size: rem-calc(16px);
+        font-weight: $font-medium;
+        margin-top: 20px;
+        color: $color-grey-text;
+    }
+
+    p {
+        font-size: rem-calc(18px);
+        color: #fff;
+        font-weight: $font-medium;
+        margin-bottom: 20px;
+        @include breakpoint(medium) {
+            font-size: rem-calc(20px);
+        }
+    }
+}
+
+.contactos_morada{
+    background-color: $color-brand-primary;
+    justify-content: center;
+    display: flex;
+    padding: 35px 0 30px;
+    
+    @include breakpoint(large){
+        padding: 50px 0 40px;
+    }
+
+    a{
+        color:#fff;
+
+        &:hover{
+           color:$color-grey-medium; 
+        }
+    }
+}
+
+.title_servicos{
+    color:$color-brand-primary;
+    font-size: rem-calc(22px);
+    font-weight: $font-bold;
+    text-align: center;
+    margin: 80px 0 40px; 
+
+    @include breakpoint(medium) {
+        font-size: rem-calc(32px);
+      }
+}
+
+.como_chegar{
+    background-color: #fff;
+    padding: 50px 30px 10px;
+    height: 100%;
+
+    @include breakpoint(large){
+        padding: 50px;      
+    }
+
+    .service{
+        display: flex;
+        align-items: center;
+        justify-content:left;
+        margin-bottom: 50px;
+
+        .icon{
+            margin-right: 40px;
+        }
+
+        p{
+            font-weight: 400;
+            color: $color-grey-text;
+            margin-bottom: 0;
+            line-height: 26px;
+        }
+    
+        .content{
+            ul{
+                margin-left: 40px;
+                margin-top: 10px;
+        
+                li{
+                    list-style: circle;
+                    line-height: 24px;
+                    color: $color-grey-text;
+                }
+            }
+        }
+    }    
+}
+  
+
+

@@ -1,0 +1,424 @@
+/* Accordion styles */
+@mixin color_content($cor-secundaria,$cor-hover) {
+
+    .accordion{
+        label{
+            &:hover {
+                background-color: $cor-hover;
+            }
+        }
+
+        .content{
+            border: 1px solid rgba($cor-secundaria, .3);
+            border-top: none;
+
+            li{
+                &::before{
+                    color: $cor-secundaria;
+                }
+            }
+        } 
+
+        .questions{
+            border-bottom: 1px solid rgba($cor-secundaria, .3);
+        }  
+        
+        input:checked {    
+            ~ label {
+                background: $cor-hover;
+            }
+        }
+    }
+}
+
+.template-ucc{
+    @include color_content($color-ucc-primary, $color-hover-ucc);
+}
+
+.template-unidadepediatria{
+    @include color_content($color-brand-secondary, $color-hover-accordion);
+}
+
+.template-clinicacoracao{
+    @include color_content($color-clinicacoracao-primary, $color-hover-clinicacoracao );
+}
+
+
+.accordion {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 60px;
+
+    @include breakpoint (medium){
+        margin-top: 40px;
+    }
+
+    .accord{
+        margin-bottom: 20px;
+    }
+    
+    input {
+        display: none;
+    }
+
+    label {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        user-select: none;
+        align-items: center;
+        padding: 10px;
+        margin-bottom: 10px;
+        color: $color-brand-primary;
+
+        .title, .title_pediatria{
+            width: 100%;
+            line-height: 25px;
+            font-size: rem-calc(20px);
+            font-weight: $font-medium;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include breakpoint (medium){
+                font-size: rem-calc(24px);
+                line-height: 30px;
+            }
+
+            img{
+                height: 60px;
+                margin-right: 30px;
+            }
+        }
+        
+        .title_pediatria{
+            text-align:center;
+
+            &::before, &::after {
+                content: "\2023";
+                font-size: 30px;
+                transition: 1s;
+                padding-top: 4px;
+
+                @include breakpoint (medium){
+                    font-size: 50px;
+                }
+            }
+            
+            &::after {
+                transform: rotate(180deg);
+            }
+        }        
+    }
+
+    .cross{
+        &::before, &::after {
+            content: '';
+            border-top: 2px solid $color-brand-primary;
+            width: 10px;
+            display: block;
+            transition: 1s;
+
+            @include breakpoint (medium){
+                width: 15px;
+            }
+        }
+
+        &::after {
+            transform: rotate(90deg);
+            margin-top: -2px;
+        }
+    }
+
+    .content {
+        box-sizing: border-box;
+        font-size: rem-calc(18px);
+        padding: 0 10px 0 10px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height, 1s;
+        margin-bottom: 25px;
+
+        @include breakpoint (medium){
+            padding: 0 25px 0 25px;
+        }
+
+        .servico_content{
+            border: 1px solid rgba($color-brand-secondary, .3);
+            margin: 0 0 25px 0;
+            background-color: $color-brand-secondary;
+            padding: 20px 10px 0 10px;
+
+            @include breakpoint (medium){
+                padding: 20px 25px 0 25px;
+                margin: 17px 0 25px 0;
+            }
+
+            h2{
+                color: $color-brand-primary;
+                text-align: center;
+                font-weight: $font-bold;
+            }
+
+            li{
+                color: #fff; 
+                font-weight: $font-medium;
+                font-size: 16px;                
+
+                &::before{
+                    color: #fff;
+                    content: "\2022"
+                }
+            }
+
+            .centro_desenvolvimento_size{
+                font-size: 14px;  
+            }
+
+            .plus{
+                &::before{
+                    color: #fff;
+                    content: "\002B";
+                    font-size: 20px;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .img_pediatria{
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin-bottom: 25px;
+
+            @include breakpoint (medium){
+                height: 300px;
+            }
+
+            img{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
+            }
+        }
+        
+        h3{
+            font-size: 18px;
+            text-decoration: underline;
+            margin-top: 20px;
+            font-weight: $font-bold !important;
+        }
+
+        p{
+            margin-top: 15px;
+            color: $color-grey-text;
+        }
+
+        ul{
+            color: $color-brand-secondary;
+            margin: 25px 0;
+            font-weight: $font-medium;
+        }
+
+        li{
+            margin-top: 10px;
+            line-height: 20px;
+            color: $color-grey-text; 
+            font-weight: $font-light;
+            margin-left: 15px;
+
+            &::before{
+                content: "\25E6";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+                font-weight: bold; /* If you want it to be bold */
+                display: inline-block; /* Needed to add space between the bullet and the text */ 
+                width: 1em; /* Also needed for space (tweak if needed) */
+                margin-left: -1em; /* Also needed for space (tweak if needed) */
+            }
+        }
+    }
+
+    .questions{
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height, 1s;
+
+    .sub-title{
+        width: 100%;
+        font-size: rem-calc(18px);
+        margin-left: 15px;
+        font-weight: $font-light;
+
+        @include breakpoint (medium){
+            font-size: rem-calc(20px);
+            }
+        }
+
+        .content_questions{
+            color: $color-grey-text;
+            padding: 10px 15px 10px 15px;
+        }
+
+        li{
+            margin-left: 15px !important;
+            
+            @include breakpoint (medium){
+                margin-left: 28px !important;
+            }
+        }
+    }
+
+    input:checked {
+        ~ .content {
+            max-height: 9999px;
+            transition: max-height, 3s;
+        }
+
+        ~ label .cross::before {
+            transform: rotate(180deg);
+            transition: 1s;
+        }
+
+        ~ label .cross::after {
+            transform: rotate(0deg);
+            transition: 1s;
+        }
+
+        ~ label .title_pediatria::before, ~ label .title_pediatria::after {
+            transform: rotate(90deg);
+            transition: 1s;
+        }
+
+        ~ .questions {
+            max-height: 9999px;
+            transition:max-height, 3s;
+            border-bottom: none;
+        }
+    }
+}
+
+.servicos_geral{
+    border: 1px solid rgba($color-brand-secondary, .3);
+    margin: 0 0 25px 0;
+    background-color: $color-brand-secondary;
+    padding: 20px 15px 10px 10px;
+
+    h2{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    li{
+        color: #fff; 
+        font-weight: $font-medium;
+        margin-top: 10px;
+        line-height: 20px;
+
+        &::before{
+            color: #fff;
+            content: "\2022";
+        }
+
+        span{
+            color: #fff;
+        }
+
+    }
+
+    .plus{
+        &::before{
+            color: #fff;
+            content: "\002B";
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+}
+
+
+/*tooltip */
+.con-tooltip{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    position: relative
+}
+
+.tooltip {
+  display: none;
+  z-index: 1;
+  opacity: .40;
+  width: 100%;
+  padding: 20px 12px 20px 0;
+  background: $color-brand-primary;
+  color: $color-brand-secondary;
+  position: absolute;
+  top:53px;
+  left: 0;
+  border-radius: 9px;
+  transform: translateY(8px);
+  box-shadow: 0 0 3px rgba(56, 54, 54, 0.86);
+
+    &::after {
+        content: " ";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 12px 12.5px 0 12.5px;
+        border-color: $color-brand-primary transparent transparent transparent;
+        position: absolute;
+        top:-12px;
+        left:45%;
+        transform: rotate(180deg);
+    }
+
+    ul{
+        font-weight: 700;
+        text-align: center;
+    }
+
+    li{
+        font-size: 14px;
+        text-align: left;
+        line-height: 15px;
+    }
+}
+
+.con-tooltip:hover {
+    li{
+        transform: translateX(10px);
+        transition: .3s linear;
+    }
+
+    .tooltip{
+        display: block;
+        transform: translateY(-10px);
+        opacity: 1;
+        transition: .3s linear;
+    }
+
+    .plus{
+        &::before{
+            content: "\2212";
+        }
+    }
+}
+
+.note{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+

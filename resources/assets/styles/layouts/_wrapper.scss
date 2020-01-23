@@ -1,0 +1,11 @@
+body.menu--visible {
+  .global-wrapper main{
+    padding-top: 75px;
+    transform: translateX(-25%) translateZ(0);
+  }
+}
+
+.global-wrapper main{
+  transition: transform .68s cubic-bezier(.64,.045,.35,1);
+  overflow: hidden;
+}
